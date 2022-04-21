@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-
+//una vez acabado el proyecto hacer que redirija a la api de swagger
 app.get("/", (req, res) => {
   res.send("holaMundo");
 });
