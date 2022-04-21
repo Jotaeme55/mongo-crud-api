@@ -9,18 +9,6 @@ const fs= require("fs")
 router.get('',async(req, res) => {
         try {
             const songDB = await song.find();
-            listaDeGeneros=[]
-            console.log(songDB[0])
-            for(s in songDB){
-                if(!listaDeGeneros.includes(songDB[s]["top_genre"])) listaDeGeneros.push(songDB[s]["top_genre"])
-            }
-            fs.writeFile('./generos.txt', listaDeGeneros.toString(), err => {
-                if (err) {
-                  console.error(err)
-                  return
-                }
-            })
-            console.log(listaDeGeneros)
             res.status(200).json(songDB);
         } catch (error) {
             console.log(error)
