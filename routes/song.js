@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const song = require('../models/song');
-const fs = require("fs")
 
 //get all songs
 router.get('/', async (req, res) => {
